@@ -6,7 +6,6 @@ use rocket::serde::Serialize;
 
 #[get("/current-time")]
 fn current_time() -> Json<Response> {
-    // 現在日付を返す
     let now = chrono::Local::now();
     Json(Response {
         message: now.format("%Y-%m-%d %H:%M:%S").to_string(),
